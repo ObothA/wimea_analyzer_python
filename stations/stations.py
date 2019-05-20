@@ -43,6 +43,9 @@ def stations():
   #print(list_of_gaps)
 
   #last time each station received data
+  print('--=====####################################======----')
+  print('                   STATIONS REPORT                    ')
   for station_tuple in list_of_gaps:
     print('station ' + str(station_tuple[0]) + ' last received data ' +str(station_tuple[1]) + ' hours back')
-
+  print('--=====####################################======----')
+  print()
