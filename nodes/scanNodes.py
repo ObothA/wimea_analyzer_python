@@ -16,7 +16,7 @@ def scanNodes(stationsIDs):
     for table in list_of_tables:
       IDresult = retrieveBiggestIdFromTable(sID[0], table)
       print(IDresult)
-      if len(IDresult) in not 0: 
+      if len(IDresult) is not 0: 
         latest_secondsEpoch = IDresult[0][1]
         if latest_secondsEpoch is not None and len(latest_secondsEpoch) == 19:
           latest_secondsEpoch = datetime.datetime.strptime(latest_secondsEpoch, '%Y-%m-%d,%H:%M:%S')
