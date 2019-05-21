@@ -28,7 +28,7 @@ def scanNodes(stationsIDs):
           latest_RTC = 0
           gap = 'not calculated, corrupt data'
 
-        print(sID[0],gap)
+        #print(sID[0],gap)
         result_for_trend = retrieveRTCforTrend(sID[0], table, IDresult[0][0])
         #print(result_for_trend)
         list_of_times = []
@@ -36,3 +36,4 @@ def scanNodes(stationsIDs):
           if rtc[0] is not None and len(rtc[0]) == 19:
             time = datetime.datetime.strptime(rtc[0], '%Y-%m-%d,%H:%M:%S')
             list_of_times.append(time.timestamp())
+        print(sID,table,list_of_times)
