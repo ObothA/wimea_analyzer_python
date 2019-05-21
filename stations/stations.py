@@ -10,7 +10,6 @@ def stations():
   sql = "SELECT `station_id` FROM `stations` WHERE `station_id` > 40"
   stations_id_result = retrieveQuery(sql)
   result = stations_id_result[0]
-  mydb = stations_id_result[1]
 
   list_of_tables = ['GroundNode', 'SinkNode', 'TenMeterNode', 'TwoMeterNode']
   list_of_gaps = []

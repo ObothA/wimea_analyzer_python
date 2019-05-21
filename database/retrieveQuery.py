@@ -10,4 +10,4 @@ def retrieveQuery(sql):
   #result = cursor.fetchone()
   # finally:
   # connection.close()
-  return [result,mydb]
+  return [result]
