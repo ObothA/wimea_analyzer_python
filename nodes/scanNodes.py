@@ -4,6 +4,8 @@
 
 from database.retrieveQuery import retrieveBiggestIdFromTable
 from database.retrieveQuery import retrieveRTCforTrend
+from nodes.utils import analyseSeconds
+
 import datetime
 import statistics
 
@@ -39,5 +41,5 @@ def scanNodes(stationsIDs):
                                     'time_in_seconds' : time.timestamp()
                                   })
         
-        print(list_of_times)
-        #analyseSeconds(gap,list_of_times)
+
+        analyseSeconds(gap,list_of_times, sID, table)
