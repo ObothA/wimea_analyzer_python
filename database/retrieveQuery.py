@@ -20,3 +20,12 @@ def retrieveBiggestIdFromTable(stationID,table):
   result = cursor.fetchall()
   return result
 
+
+def retrieveRTCforTrend(stationID, table, biggestId):
+  cursor = mydb.cursor()
+  sqlStatement = "select RTC_T from " +table+ " where stationID = " +str(stationID)+ " and id != " +str(biggestId)+ " ORDER BY id  DESC limit 500"
+  cursor.execute(sqlStatement)
+  result = cursor.fetchall()
+  return result
+
+

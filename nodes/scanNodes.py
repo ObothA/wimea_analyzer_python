@@ -3,6 +3,7 @@
 #
 
 from database.retrieveQuery import retrieveBiggestIdFromTable
+from database.retrieveQuery import retrieveRTCforTrend
 import datetime
 
 
@@ -12,7 +13,7 @@ def scanNodes(stationsIDs):
     # sID[0]
     for table in list_of_tables:
       IDresult = retrieveBiggestIdFromTable(sID[0], table)
-      print(IDresult)
+      #print(IDresult)
       latest_secondsEpoch = IDresult[0][1]
       second_latest_secondsEpoch = IDresult[1][1]
       if latest_secondsEpoch is not None and len(latest_secondsEpoch) == 19  and second_latest_secondsEpoch is not None and len(second_latest_secondsEpoch) == 19:
@@ -26,6 +27,6 @@ def scanNodes(stationsIDs):
         latest_secondsEpoch = 0
         second_latest_secondsEpoch = 0
         gap = 'not calculated, corrupt data'
-      print(latest_secondsEpoch, second_latest_secondsEpoch)
-      print(gap)
-      #print(sID[0], table, IDresult, latest_secondsEpoch)
+
+      result_for_trend = retrieveRTCforTrend(sID[0], table, IDresult[0][0])
+      print(result_for_trend)
