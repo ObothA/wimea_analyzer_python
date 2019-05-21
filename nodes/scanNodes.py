@@ -12,10 +12,13 @@ def scanNodes(stationsIDs):
     # sID[0]
     for table in list_of_tables:
       IDresult = retrieveBiggestIdFromTable(sID[0], table)
-      latest_secondsEpoch = IDresult[0][1]
-      if len(latest_secondsEpoch) == 19:
-        latest_secondsEpoch = datetime.datetime.strptime(latest_secondsEpoch, '%Y-%m-%d,%H:%M:%S')
-        latest_secondsEpoch = latest_secondsEpoch.timestamp()
-      else:
-        latest_secondsEpoch = 0
-      print(sID[0], table, IDresult, latest_secondsEpoch)
+      print(IDresult)
+      # latest_secondsEpoch = IDresult[0][1]
+      # if len(latest_secondsEpoch) == 19:
+      #   latest_secondsEpoch = datetime.datetime.strptime(latest_secondsEpoch, '%Y-%m-%d,%H:%M:%S')
+      #   latest_secondsEpoch = latest_secondsEpoch.timestamp()
+      # else:
+      #   latest_secondsEpoch = 0
+      
+
+      # print(sID[0], table, IDresult, latest_secondsEpoch)

@@ -15,7 +15,7 @@ def retrieveQuery(sql):
 def retrieveBiggestIdFromTable(stationID,table):
   ############################################
   cursor = mydb.cursor()
-  sqlStatement = "select id, RTC_T from " +table+ " where stationID = " +str(stationID)+ " ORDER BY id  DESC limit 1"
+  sqlStatement = "select id, RTC_T from " +table+ " where stationID = " +str(stationID)+ " ORDER BY id  DESC limit 2"
   cursor.execute(sqlStatement)
   result = cursor.fetchall()
   return result
