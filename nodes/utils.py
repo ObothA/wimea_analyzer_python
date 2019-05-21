@@ -16,5 +16,5 @@ def analyseSeconds(gap,list_of_times, sID, table):
     #print(difference, list_of_times[counter]['rtc'], list_of_times[counter + 1]['rtc'])
 
     for cluster in clusters:
-      print(cluster)
+      print(cluster[0])
     counter = counter + 1
