@@ -15,7 +15,7 @@ def scanNodes(stationsIDs):
     # sID[0]
     for table in list_of_tables:
       IDresult = retrieveBiggestIdFromTable(sID[0], table)
-      print(IDresult)
+      #print(IDresult)
       if len(IDresult) is not 0: 
         latest_RTC = IDresult[0][1]
         if latest_RTC is not None and len(latest_RTC) == 19:
@@ -28,6 +28,7 @@ def scanNodes(stationsIDs):
           latest_RTC = 0
           gap = 'not calculated, corrupt data'
 
+        print(sID[0],gap)
         result_for_trend = retrieveRTCforTrend(sID[0], table, IDresult[0][0])
         #print(result_for_trend)
         list_of_times = []
