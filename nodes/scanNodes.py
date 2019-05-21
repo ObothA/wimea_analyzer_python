@@ -35,5 +35,9 @@ def scanNodes(stationsIDs):
         for rtc in result_for_trend:
           if rtc[0] is not None and len(rtc[0]) == 19:
             time = datetime.datetime.strptime(rtc[0], '%Y-%m-%d,%H:%M:%S')
-            list_of_times.append(time.timestamp())
-        print(sID,table,list_of_times)
+            list_of_times.append({ 'rtc': rtc[0], 
+                                    'time_in_seconds' : time.timestamp()
+                                  })
+        
+        print(list_of_times)
+        #analyseSeconds(gap,list_of_times)
