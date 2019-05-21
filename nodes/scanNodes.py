@@ -26,6 +26,6 @@ def scanNodes(stationsIDs):
         latest_secondsEpoch = 0
         second_latest_secondsEpoch = 0
         gap = 'not calculated, corrupt data'
-      
+      print(latest_secondsEpoch, second_latest_secondsEpoch)
       print(gap)
       #print(sID[0], table, IDresult, latest_secondsEpoch)
