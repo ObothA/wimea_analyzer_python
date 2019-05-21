@@ -17,15 +17,15 @@ def scanNodes(stationsIDs):
       IDresult = retrieveBiggestIdFromTable(sID[0], table)
       print(IDresult)
       if len(IDresult) is not 0: 
-        latest_secondsEpoch = IDresult[0][1]
-        if latest_secondsEpoch is not None and len(latest_secondsEpoch) == 19:
-          latest_secondsEpoch = datetime.datetime.strptime(latest_secondsEpoch, '%Y-%m-%d,%H:%M:%S')
-          latest_secondsEpoch = latest_secondsEpoch.timestamp()
+        latest_RTC = IDresult[0][1]
+        if latest_RTC is not None and len(latest_RTC) == 19:
+          latest_RTC = datetime.datetime.strptime(latest_RTC, '%Y-%m-%d,%H:%M:%S')
+          latest_RTC = latest_RTC.timestamp()
           now = datetime.datetime.now().timestamp()
-          gap = now - latest_secondsEpoch
+          gap = now - latest_RTC
         else:
           # corrupt data detected, no problem will be reported
-          latest_secondsEpoch = 0
+          latest_RTC = 0
           gap = 'not calculated, corrupt data'
 
         result_for_trend = retrieveRTCforTrend(sID[0], table, IDresult[0][0])
