@@ -40,9 +40,11 @@ def scanNodes(stationsIDs):
       
       mean_of_times = statistics.mean(list_of_times)
       magnitude = mean_of_times * 10
-      if gap >  magnitude:
+      if type(gap) is str:
+        report = 'corrupt rtc somewhere, not calculated'
+      elif gap >  magnitude:
         report = '***OFF'
-      else :
+      elif gap < magnitude :
         report = 'ON'
 
       print('station ' +str(sID[0])+ ', ' + table + '   ' + report)
