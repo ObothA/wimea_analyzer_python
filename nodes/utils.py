@@ -5,7 +5,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
     return object['time_in_seconds']
 
   #sort to avoid negatives during subtraction
-  list_of_times.sort(key=sortFunc)
+  list_of_times.sort(reverse=True, key=sortFunc)
 
   counter = 0
   while counter < len(list_of_times) - 1:
