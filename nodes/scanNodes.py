@@ -30,9 +30,10 @@ def scanNodes(stationsIDs):
 
       result_for_trend = retrieveRTCforTrend(sID[0], table, IDresult[0][0])
       #print(result_for_trend)
+      list_of_times = []
       for rtc in result_for_trend:
-        print(rtc[0])
         if rtc[0] is not None and len(rtc[0]) == 19:
           time = datetime.datetime.strptime(rtc[0], '%Y-%m-%d,%H:%M:%S')
-          print(time.timestamp())
-
+          list_of_times.append(time.timestamp())
+      
+      print(list_of_times)
