@@ -10,5 +10,5 @@ def scanNodes(stationsIDs):
         # sID[0]
         for table in list_of_tables:
             IDresult  = retrieveBiggestIdFromTable(sID[0],table)
-            print(IDresult)
+            print(sID, table, IDresult)
 

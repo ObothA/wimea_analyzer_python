@@ -8,7 +8,7 @@ from nodes.scanNodes import scanNodes
 def stations():
   #scan stations for on/off status
 
-  sql = "SELECT `station_id` FROM `stations` WHERE `station_id` > 51"
+  sql = "SELECT `station_id` FROM `stations` WHERE `station_id` = 54" #49
   stations_id_result = retrieveQuery(sql)
   result = stations_id_result[0]
 
