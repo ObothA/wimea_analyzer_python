@@ -39,4 +39,4 @@ def scanNodes(stationsIDs):
           list_of_times.append(time.timestamp())
       
       mean_of_times = statistics.mean(list_of_times)
-      print(mean_of_times)
+      print(sID[0], table, mean_of_times)
