@@ -3,4 +3,5 @@
 #
 
 def scanNodes(stationsIDs):
-    print(stationsIDs)
+    for sID in stationsIDs:
+        print(sID[0])
