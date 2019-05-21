@@ -26,7 +26,6 @@ def scanNodes(stationsIDs):
         else:
           # corrupt data detected, no problem will be reported
           latest_secondsEpoch = 0
-          second_latest_secondsEpoch = 0
           gap = 'not calculated, corrupt data'
 
         result_for_trend = retrieveRTCforTrend(sID[0], table, IDresult[0][0])
