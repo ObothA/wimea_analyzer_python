@@ -15,7 +15,7 @@ def scanNodes(stationsIDs):
     # sID[0]
     for table in list_of_tables:
       IDresult = retrieveBiggestIdFromTable(sID[0], table)
-      #print(IDresult)
+      print(IDresult)
       latest_secondsEpoch = IDresult[0][1]
       second_latest_secondsEpoch = IDresult[1][1]
       if latest_secondsEpoch is not None and len(latest_secondsEpoch) == 19  and second_latest_secondsEpoch is not None and len(second_latest_secondsEpoch) == 19:
