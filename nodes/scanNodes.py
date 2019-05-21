@@ -3,6 +3,7 @@
 #
 
 from database.retrieveQuery import retrieveBiggestIdFromTable
+import datetime
 
 def scanNodes(stationsIDs):
     list_of_tables = ['GroundNode', 'SinkNode', 'TenMeterNode', 'TwoMeterNode']
@@ -10,5 +11,6 @@ def scanNodes(stationsIDs):
         # sID[0]
         for table in list_of_tables:
             IDresult  = retrieveBiggestIdFromTable(sID[0],table)
-            print(sID, table, IDresult)
+            latest_secondsEpoch = IDresult[0][1]
+            print(sID[0], table, IDresult, latest_secondsEpoch)
 
