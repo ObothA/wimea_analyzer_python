@@ -52,4 +52,12 @@ def stations():
 
   #######################
   #call next method to scan nodes 
+
+  print('--=====####################################======----')
+  print('                   @ NODE REPORT                    ')
+
   scanNodes(result)
+  
+  print('--=====####################################======----')
+  print('                   @ NODE REPORT                    ')
+  print()

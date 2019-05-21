@@ -39,4 +39,9 @@ def scanNodes(stationsIDs):
           list_of_times.append(time.timestamp())
       
       mean_of_times = statistics.mean(list_of_times)
-      print(sID[0], table, mean_of_times)
+      if gap > mean_of_times * 10 :
+        report = '***OFF'
+      else :
+        report = 'ON'
+
+      print('station ' +str(sID[0])+ ', ' + table + '   ' + report)
