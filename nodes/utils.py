@@ -24,3 +24,4 @@ def analyseSeconds(gap,list_of_times, sID, table):
         clusters.append([difference,0])
     counter = counter + 1
   print(clusters)
+  print()
