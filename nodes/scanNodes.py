@@ -15,7 +15,7 @@ def scanNodes(stationsIDs):
       print(IDresult)
       latest_secondsEpoch = IDresult[0][1]
       second_latest_secondsEpoch = IDresult[1][1]
-      if len(latest_secondsEpoch) == 19 and len(second_latest_secondsEpoch) == 19:
+      if len(latest_secondsEpoch) == 19 and type(latest_secondsEpoch) not None and len(second_latest_secondsEpoch) == 19 and type(second_latest_secondsEpoch) not None:
         latest_secondsEpoch = datetime.datetime.strptime(latest_secondsEpoch, '%Y-%m-%d,%H:%M:%S')
         second_latest_secondsEpoch = datetime.datetime.strptime(second_latest_secondsEpoch, '%Y-%m-%d,%H:%M:%S')
         latest_secondsEpoch = latest_secondsEpoch.timestamp()
