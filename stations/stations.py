@@ -2,7 +2,8 @@
 #
 #
 import datetime
-from database.retrieveQuery import retrieveQuery 
+from database.retrieveQuery import retrieveQuery
+from nodes.scanNodes import scanNodes 
 
 def stations():
   #scan stations for on/off status
@@ -48,3 +49,7 @@ def stations():
     print('station ' + str(station_tuple[0]) + ' last received data ' +str(station_tuple[1]) + ' hours back')
   print('--=====####################################======----')
   print()
+
+  #######################
+  #call next method to scan nodes 
+  scanNodes(result)
