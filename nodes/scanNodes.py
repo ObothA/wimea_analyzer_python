@@ -5,6 +5,8 @@
 from database.retrieveQuery import retrieveBiggestIdFromTable
 from database.retrieveQuery import retrieveRTCforTrend
 import datetime
+import statistics
+
 
 
 def scanNodes(stationsIDs):
@@ -36,4 +38,5 @@ def scanNodes(stationsIDs):
           time = datetime.datetime.strptime(rtc[0], '%Y-%m-%d,%H:%M:%S')
           list_of_times.append(time.timestamp())
       
-      print(list_of_times)
+      mean_of_times = statistics.mean(list_of_times)
+      print(mean_of_times)
