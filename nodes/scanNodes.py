@@ -45,5 +45,5 @@ def scanNodes(stationsIDs):
                                   })
           else:
             print('dirty rtc')
-        print('number of rows ' +x)
+        print('number of rows ' + str(x))
         analyseSeconds(gap,list_of_times, sID, table)
