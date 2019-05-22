@@ -50,7 +50,7 @@ def stations():
     #compare gap
     if station_tuple[1] < 2:
       # append a tuple because the function below expects a tuple
-      list_of_stationIDs_that_are_on.append([station_tuple[1]])
+      list_of_stationIDs_that_are_on.append((station_tuple[0],))
       print('station ' + str(station_tuple[0]) + '  ON')
     elif station_tuple[1] > 2:
       print('station ' + str(station_tuple[0]) + '  OFF')
