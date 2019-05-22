@@ -64,8 +64,8 @@ def stations():
   print('--=====####################################======----')
   print('                   @ NODE REPORT                    ')
 
-  # scanNodes(list_of_stationIDs_that_are_on)
-  scanNodes(result)
+  scanNodes(list_of_stationIDs_that_are_on)
+  #scanNodes(result)
 
   print('--=====####################################======----')
   print('                   @ NODE REPORT                    ')
