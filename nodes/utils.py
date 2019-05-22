@@ -34,7 +34,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
   clusters.sort(reverse=True, key=sortClusters)
 
   most_occuring_difference = clusters[0][0]
-  magnitude = most_occuring_difference * 10000
+  magnitude = most_occuring_difference * 20000
   if type(gap) is int or type(gap) is float:
     gap = round(gap)
     if gap > magnitude:
