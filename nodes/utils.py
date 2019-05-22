@@ -44,5 +44,6 @@ def analyseSeconds(gap,list_of_times, sID, table):
   else :
     node_status = 'not calculated, latest rtc is corrupt'
   
-  print(sID[0],table,node_status, gap, magnitude)
+  #print(sID[0],table,node_status, gap, magnitude)
+  print(sID[0],table,node_status)
 
