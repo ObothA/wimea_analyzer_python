@@ -12,7 +12,8 @@ import statistics
 
 
 def scanNodes(stationsIDs):
-  list_of_tables = ['GroundNode', 'SinkNode', 'TenMeterNode', 'TwoMeterNode']
+  # list_of_tables = ['GroundNode', 'SinkNode', 'TenMeterNode', 'TwoMeterNode']
+  list_of_tables = ['GroundNode']
   for sID in stationsIDs:
     # sID[0]
     for table in list_of_tables:
