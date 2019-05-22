@@ -34,11 +34,12 @@ def analyseSeconds(gap,list_of_times, sID, table):
   clusters.sort(reverse=True, key=sortClusters)
 
   most_occuring_difference = clusters[0][0]
+  magnitude = most_occuring_difference * 10000
   if type(gap) is int or type(gap) is float:
     gap = round(gap)
-    if gap > most_occuring_difference * 100000:
+    if gap > magnitude:
       node_status = 'OFF'
-    elif gap < most_occuring_difference * 100000:
+    elif gap < magnitude:
       node_status = 'ON'
   else :
     node_status = 'not calculated, latest rtc is corrupt'
