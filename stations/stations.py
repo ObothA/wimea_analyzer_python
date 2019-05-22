@@ -64,8 +64,6 @@ def stations():
   print('--=====####################################======----')
   print('                   @ NODE REPORT                    ')
 
-  print(result)
-  print(list_of_stationIDs_that_are_on)
   scanNodes(list_of_stationIDs_that_are_on)
 
   print('--=====####################################======----')
