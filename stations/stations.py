@@ -45,8 +45,16 @@ def stations():
   #last time each station received data
   print('--=====####################################======----')
   print('                   STATIONS REPORT                    ')
+  list_of_stationIDs_that_are_on = []
   for station_tuple in list_of_gaps:
-    print('station ' + str(station_tuple[0]) + ' last received data ' +str(station_tuple[1]) + ' hours back')
+    #compare gap
+    if station_tuple[1] < 2:
+      # append a tuple because the function below expects a tuple
+      list_of_stationIDs_that_are_on.append((station_tuple[1]))
+      print('station ' + str(station_tuple[0]) + '  ON')
+    elif station_tuple[1] > 2:
+      print('station ' + str(station_tuple[0]) + '  OFF')
+
   print('--=====####################################======----')
   print()
 
@@ -56,7 +64,7 @@ def stations():
   print('--=====####################################======----')
   print('                   @ NODE REPORT                    ')
 
-  scanNodes(result)
+  scanNodes(list_of_stationIDs_that_are_on)
 
   print('--=====####################################======----')
   print('                   @ NODE REPORT                    ')
