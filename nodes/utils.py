@@ -40,5 +40,5 @@ def analyseSeconds(gap,list_of_times, sID, table):
     node_status = 'OFF'
   elif gap < most_occuring_difference * 20000:
     node_status = 'ON'
-  print(sID,table,node_status)
+  print(sID[0],table,node_status)
 
