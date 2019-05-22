@@ -8,7 +8,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
   #sort to avoid negatives during subtraction
   list_of_times.sort(reverse=True, key=sortFunc)
 
-  clusters = []
+  clusters = [[61,1]]
   counter = 0
   while counter < len(list_of_times) - 1:
     difference = list_of_times[counter]['time_in_seconds'] - list_of_times[counter + 1]['time_in_seconds']
