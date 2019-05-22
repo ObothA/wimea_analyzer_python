@@ -8,7 +8,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
   #sort to avoid negatives during subtraction
   list_of_times.sort(reverse=True, key=sortFunc)
 
-  clusters = [[61,1]]
+  #clusters = [[61,1]]
   clusters = []
   counter = 0
   while counter < len(list_of_times) - 1:
@@ -27,4 +27,16 @@ def analyseSeconds(gap,list_of_times, sID, table):
   
   print(clusters)
   print()
-  print(gap)
+  print(round(gap))
+  print()
+
+  # sort the clusters
+  def sortClusters(cluster):
+    # function to sort dictionaries based on seconds
+    return cluster[1]
+
+  #sort to avoid negatives during subtraction
+  clusters.sort(reverse=True, key=sortClusters)
+  print(clusters)
+
+
