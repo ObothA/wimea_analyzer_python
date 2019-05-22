@@ -44,6 +44,6 @@ def scanNodes(stationsIDs):
                                     'time_in_seconds' : time.timestamp()
                                   })
           else:
-            print('dirty rtc')
-        print('number of rows ' + str(x))
+            #print('dirty rtc')
+        #print('number of rows ' + str(x))
         analyseSeconds(gap,list_of_times, sID, table)

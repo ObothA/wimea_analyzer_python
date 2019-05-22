@@ -25,19 +25,20 @@ def analyseSeconds(gap,list_of_times, sID, table):
         clusters.append([difference,1])
     counter = counter + 1
   
-  print(clusters)
-  print()
-  print(round(gap))
-  print()
-
   # sort the clusters
   def sortClusters(cluster):
-    # function to sort dictionaries based on seconds
+    # function to sort clusters based on frequencies in the clusters
     return cluster[1]
 
   #sort to avoid negatives during subtraction
   clusters.sort(reverse=True, key=sortClusters)
-  most_occuring_difference = clusters[0][0]
-  print(most_occuring_difference)
 
+  most_occuring_difference = clusters[0][0]
+  gap = round(gap)
+
+  if gap > most_occuring_difference * 20000:
+    node_status = 'OFF'
+  elif gap < most_occuring_difference * 20000:
+    node_status = 'ON'
+  print(sID,table,node_status)
 
