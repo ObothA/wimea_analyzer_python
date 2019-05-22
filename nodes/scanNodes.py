@@ -35,7 +35,9 @@ def scanNodes(stationsIDs):
         result_for_trend = retrieveRTCforTrend(sID[0], table, IDresult[0][0])
         #print(result_for_trend)
         list_of_times = []
+        x=0
         for rtc in result_for_trend:
+          x = x + 1
           if rtc[0] is not None and len(rtc[0]) == 19:
             time = datetime.datetime.strptime(rtc[0], '%Y-%m-%d,%H:%M:%S')
             list_of_times.append({ 'rtc': rtc[0], 
@@ -43,5 +45,5 @@ def scanNodes(stationsIDs):
                                   })
           else:
             print('dirty rtc')
-
+        print('number of rows ' +x)
         analyseSeconds(gap,list_of_times, sID, table)
