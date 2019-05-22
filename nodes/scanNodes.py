@@ -40,6 +40,7 @@ def scanNodes(stationsIDs):
             list_of_times.append({ 'rtc': rtc[0], 
                                     'time_in_seconds' : time.timestamp()
                                   })
-        
+          else:
+            print('dirty rtc')
 
         analyseSeconds(gap,list_of_times, sID, table)
