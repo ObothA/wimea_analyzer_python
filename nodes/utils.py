@@ -18,7 +18,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
     append = True
     for cluster in clusters:
       if difference == cluster[0]:
-        cluster[1] + 1
+        cluster[0]  = cluster[0]+ 1
         append = False
     if append:
         clusters.append([difference,1])
