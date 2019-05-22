@@ -37,6 +37,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
 
   #sort to avoid negatives during subtraction
   clusters.sort(reverse=True, key=sortClusters)
-  print(clusters)
+  most_occuring_difference = clusters[0][0]
+  print(most_occuring_difference)
 
 
