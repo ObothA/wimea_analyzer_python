@@ -15,6 +15,7 @@ def retrieveQuery(sql):
 def retrieveBiggestIdFromTable(stationID,table):
   ############################################
   cursor = mydb.cursor()
+  #limit RTC to length of 19 to avoid corrupt RTCs
   sqlStatement = "select id, RTC_T from " +table+ " where stationID = " +str(stationID)+ " and char_length(RTC_T)=19 ORDER BY id  DESC limit 1"
   cursor.execute(sqlStatement)
   result = cursor.fetchall()
@@ -23,7 +24,7 @@ def retrieveBiggestIdFromTable(stationID,table):
 
 def retrieveRTCforTrend(stationID, table, biggestId):
   cursor = mydb.cursor()
-  sqlStatement = "select RTC_T from " +table+ " where stationID = " +str(stationID)+ " and id != " +str(biggestId)+ " ORDER BY id  DESC limit 5000"
+  sqlStatement = "select RTC_T from " +table+ " where stationID = " +str(stationID)+ " and id != " +str(biggestId)+ " and char_length(RTC_T)=19 ORDER BY id  DESC limit 5000"
   cursor.execute(sqlStatement)
   result = cursor.fetchall()
   return result
