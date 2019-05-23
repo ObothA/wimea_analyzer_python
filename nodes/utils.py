@@ -23,7 +23,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
     #change tracker
     if previous_difference is not 0 and difference > 1:
       if difference > previous_difference:
-        print(sID[0], table, list_of_times[counter + 1]['rtc'] +' => '+list_of_times[counter]['rtc'] + ' from ' + str(previous_difference) + ' to '+ str(difference))   
+        # print(sID[0], table, list_of_times[counter + 1]['rtc'] +' => '+list_of_times[counter]['rtc'] + ' from ' + str(previous_difference) + ' to '+ str(difference))   
         previous_difference = difference
       elif previous_difference < difference:
         previous_difference = difference
