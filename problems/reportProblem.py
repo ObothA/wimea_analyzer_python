@@ -13,3 +13,4 @@ def reportProblemMethod(stationID, problem):
   else :
     print('entry found')
     status = result[0][0]
+    print(status)
