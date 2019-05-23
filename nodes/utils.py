@@ -2,6 +2,7 @@ import datetime
 import copy
 
 from problems.reportProblem import reportProblemMethod
+from database.retrieveQuery import insertIntoChangeTracker
 
 
 def analyseSeconds(gap,list_of_times, sID, table):
@@ -25,7 +26,11 @@ def analyseSeconds(gap,list_of_times, sID, table):
     #change tracker
     if previous_difference is not 0 and difference > 1:
       if difference > previous_difference:
+        time_of_running_analyzer = datetime.datetime.now()
+        change = ' from ' + str(previous_difference) + ' to '+ str(difference)
+        time_range = 'between' + list_of_times[counter + 1]['rtc'] +' and '+list_of_times[counter]['rtc']
         # print(sID[0], table, list_of_times[counter + 1]['rtc'] +' => '+list_of_times[counter]['rtc'] + ' from ' + str(previous_difference) + ' to '+ str(difference))   
+        insertIntoChangeTracker(sID[0], time_of_running_analyzer, table, change, time_range)
         previous_difference = difference
       elif previous_difference < difference:
         previous_difference = difference

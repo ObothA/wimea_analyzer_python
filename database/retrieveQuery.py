@@ -67,4 +67,16 @@ def updateProblem(status, entryID):
   mydb.commit()
 
 
+######
+# insert into changer tracker
+######3
+def insertIntoChangeTracker(stationID, time_of_last_running_analyzer, Node, change, time_range_when_change_occured):
+  cursor = mydb.cursor()
+  sql = "INSERT INTO DetectedAnalyzerProblems (stationID, time_of_last_running_analyzer, Node, change, time_range_when_change_occured):) VALUES (%s, %s, %s, %s, %s)"
+  time = datetime.datetime.now()
+  val = (str(stationID),  time_of_last_running_analyzer, Node, change, time_range_when_change_occured)
+  cursor.execute(sql, val)
+
+  mydb.commit()
+
 
