@@ -55,7 +55,7 @@ def stations():
       # print('station ' + str(station_tuple[0]) + '  ON')
     elif station_tuple[1] > 4:
       # report problem
-      reportProblemMethod(station_tuple[0], 'station off')
+      reportProblemMethod(station_tuple[0], 'station_off')
       # print('station ' + str(station_tuple[0]) + '  OFF')
 
   print('--=====####################################======----')
