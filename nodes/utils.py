@@ -54,6 +54,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
     gap = round(gap)
     if gap > magnitude:
       node_status = 'OFF'
+      reportProblemMethod(sID[0], table + ' ' + node_status)
     elif gap < magnitude:
       node_status = 'ON'
   else :
