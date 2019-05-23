@@ -16,7 +16,7 @@ def reportProblemMethod(stationID, problem):
   else :
     status = result[0][0]
     entry_id = result[0][1]
-    time_reported = result[0][1]
+    time_reported = result[0][2]
     # get time since epoch
     print(time_reported)
     time_reported = datetime.datetime.strptime(str(time_reported), '%Y-%m-%d %H:%M:%S').timestamp()
