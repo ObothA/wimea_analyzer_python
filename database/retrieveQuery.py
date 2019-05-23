@@ -60,7 +60,7 @@ def insertProblem(stationID, problem, status):
 
 def updateProblem(status, entryID):
   mycursor = mydb.cursor()
-  sql = "UPDATE DetectedAnalyzerProblems SET status =" +status+  "WHERE id = " + str(entryID)
+  sql = "UPDATE DetectedAnalyzerProblems SET status = " +status+  " WHERE id = " + str(entryID)
 
   mycursor.execute(sql)
 
