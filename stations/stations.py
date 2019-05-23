@@ -4,7 +4,7 @@
 import datetime
 from database.retrieveQuery import retrieveQuery
 from nodes.scanNodes import scanNodes 
-form problem import reportProblem
+from problem import reportProblem
 
 def stations():
   #scan stations for on/off status

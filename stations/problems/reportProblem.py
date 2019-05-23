@@ -3,4 +3,4 @@
 ########
 
 def reportProblem(stationID, problem):
-  print(stationID problem)
+  print(stationID, problem)
