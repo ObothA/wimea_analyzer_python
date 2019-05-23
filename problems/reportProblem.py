@@ -16,5 +16,4 @@ def reportProblemMethod(stationID, problem):
     entry_id = result[0][1]
     print(status)
     if status == 'reported':
-      print('lets report')
       updateProblem('re-reported', entry_id)
