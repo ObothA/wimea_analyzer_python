@@ -1,4 +1,5 @@
 import datetime
+import copy
 
 
 def analyseSeconds(gap,list_of_times, sID, table):
@@ -13,17 +14,26 @@ def analyseSeconds(gap,list_of_times, sID, table):
   #clusters = [[61,1]]
   clusters = []
   counter = 0
+  previous_difference = 0
   while counter < len(list_of_times) - 1:
     difference = list_of_times[counter]['time_in_seconds'] - list_of_times[counter + 1]['time_in_seconds']
     difference = difference / 60
     difference = round(difference)
-    #print(difference, list_of_times[counter]['rtc'], list_of_times[counter + 1]['rtc'])
+    
+    if previous_difference is not 0 and difference > 1:
+      if difference > previous_difference:
+        print(list_of_times[counter]['rtc'] +' => '+list_of_times[counter + 1]['rtc'] + 'from ' + previous_difference + ' to '+ difference)   
+        previous_difference = difference
+      elif previous_difference < difference:
+        previous_difference = difference
+    elif previous_difference is 0 and difference > 1:
+      previous_difference = difference
 
     if difference > 1:
       append = True
       for cluster in clusters:
         if difference == cluster[0]:
-          cluster[1]  = cluster[1]+ 1
+          cluster[1]  = cluster[1] + 1
           append = False
       if append:
           clusters.append([difference,1])
@@ -35,6 +45,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
     return cluster[1]
 
   #sort to avoid negatives during subtraction
+  original_clusters
   clusters.sort(reverse=True, key=sortClusters)
 
   most_occuring_difference = clusters[0][0]
@@ -49,7 +60,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
     node_status = 'not calculated, latest rtc is corrupt'
   
   #print(sID[0],table,node_status, gap, magnitude)
-  print(sID[0],table,node_status)
+  #print(sID[0],table,node_status)
   #entering db
-  print(sID[0], datetime.datetime.now(), str(clusters))
+  #print(sID[0], datetime.datetime.now(), str(clusters))
 
