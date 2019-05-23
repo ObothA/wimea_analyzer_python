@@ -1,6 +1,8 @@
 # from database.connection import connection
 from database.connection import mydb
 
+import datetime
+
 
 def retrieveQuery(sql):
   cursor = mydb.cursor()
@@ -38,5 +40,17 @@ def retrieveStatus(id,problem):
   return result
 
 
+#######
+#SORRY THE FILE IS CALLED RETRIEVE QUERY BUT WE SHALL DO INSERET QUERIES IN HERE AS WELL
+#######
+
+def insertProblem(stationID, problem):
+  cursor = mydb.cursor()
+  sql = "INSERT INTO DetectedAnalyzerProblems (stationID, Problem, when_reported,status) VALUES (%s, %s, %s, %s)"
+  time = datetime.datetime.now()
+  val = (str(stationID), problem, str(time),'reported')
+  cursor.execute(sql, val)
+
+  mydb.commit()
 
 
