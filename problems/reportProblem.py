@@ -18,8 +18,8 @@ def reportProblemMethod(stationID, problem):
     entry_id = result[0][1]
     time_reported = result[0][2]
     # get time since epoch
-    print(time_reported)
-    time_reported = datetime.datetime.strptime(str(time_reported), '%Y-%m-%d %H:%M:%S').timestamp()
+    print(time_reported) 
+    time_reported = datetime.datetime.strptime(str(time_reported)[0:19], '%Y-%m-%d %H:%M:%S').timestamp()
 
     if status == 'reported':
       updateProblem('re-reported', entry_id)
