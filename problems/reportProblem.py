@@ -11,7 +11,6 @@ from database.retrieveQuery import updateProblem
 def reportProblemMethod(stationID, problem):
   result = retrieveStatus(stationID, problem)
   if len(result) is 0:
-    print('no entry')
     insertProblem(stationID, problem, 'reported')
   else :
     status = result[0][0]

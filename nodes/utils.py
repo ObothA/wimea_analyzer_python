@@ -55,10 +55,10 @@ def analyseSeconds(gap,list_of_times, sID, table):
   if type(gap) is int or type(gap) is float:
     gap = round(gap)
     if gap > magnitude:
-      node_status = 'OFF'
-      reportProblemMethod(sID[0], table + ' ' + node_status)
+      node_status = 'off'
+      reportProblemMethod(sID[0], table + '_' + node_status)
     elif gap < magnitude:
-      node_status = 'ON'
+      node_status = 'on'
   else :
     node_status = 'not calculated, latest rtc is corrupt'
   
