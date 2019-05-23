@@ -51,5 +51,5 @@ def analyseSeconds(gap,list_of_times, sID, table):
   #print(sID[0],table,node_status, gap, magnitude)
   print(sID[0],table,node_status)
   #entering db
-  print(sID[0], datetime.datetime.now, str(clusters))
+  print(sID[0], datetime.datetime.now(), str(clusters))
 
