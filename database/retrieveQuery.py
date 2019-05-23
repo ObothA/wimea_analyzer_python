@@ -72,7 +72,7 @@ def updateProblem(status, entryID):
 ######3
 def insertIntoChangeTracker(stationID, time_of_last_running_analyzer, Node, change, time_range_when_change_occured):
   cursor = mydb.cursor()
-  sql = "INSERT INTO ChangeTracker (stationID, time_of_last_running_analyzer, Node, change(minutes), time_range_when_change_occured) VALUES (%s, %s, %s, %s, %s)"
+  sql = "INSERT INTO ChangeTracker (stationID, time_of_last_running_analyzer, Node, change_in_minutes, time_range_when_change_occured) VALUES (%s, %s, %s, %s, %s)"
   time = datetime.datetime.now()
   val = (str(stationID),  time_of_last_running_analyzer, Node, change, time_range_when_change_occured)
   cursor.execute(sql, val)
