@@ -17,8 +17,7 @@ def reportProblemMethod(stationID, problem):
     status = result[0][0]
     entry_id = result[0][1]
     time_reported = result[0][2]
-    # get time since epoch
-    print(time_reported) 
+    # get time since epoch, [0;19] slices upto 19th index of string to fit strp requirements
     time_reported = datetime.datetime.strptime(str(time_reported)[0:19], '%Y-%m-%d %H:%M:%S').timestamp()
 
     if status == 'reported':
@@ -28,5 +27,9 @@ def reportProblemMethod(stationID, problem):
       current_time = datetime.datetime.now().timestamp()
       gap = (current_time - time_reported)/ 3600
       print(gap)
+      if(gap > 0.01):
+        updateProblem('persistent', entry_id)
+
+
       
       
