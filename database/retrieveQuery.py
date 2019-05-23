@@ -34,7 +34,7 @@ def retrieveRTCforTrend(stationID, table, biggestId):
 
 def retrieveStatus(id,problem):
   cursor = mydb.cursor()
-  sqlStatement = " select status from DetectedAnalyzerProblems where stationID = " +str(id)+ " and Problem = '" + problem + "' and status != 'fixed'"
+  sqlStatement = " select status, id from DetectedAnalyzerProblems where stationID = " +str(id)+ " and Problem = '" + problem + "' and status != 'fixed'"
   cursor.execute(sqlStatement)
   result = cursor.fetchall()
   return result
@@ -44,13 +44,27 @@ def retrieveStatus(id,problem):
 #SORRY THE FILE IS CALLED RETRIEVE QUERY BUT WE SHALL DO INSERET QUERIES IN HERE AS WELL
 #######
 
-def insertProblem(stationID, problem):
+def insertProblem(stationID, problem, status):
   cursor = mydb.cursor()
   sql = "INSERT INTO DetectedAnalyzerProblems (stationID, Problem, when_reported,status) VALUES (%s, %s, %s, %s)"
   time = datetime.datetime.now()
-  val = (str(stationID), problem, str(time),'reported')
+  val = (str(stationID), problem, str(time), status)
   cursor.execute(sql, val)
 
   mydb.commit()
+
+
+  ######
+  # UPDATE QUERY
+  #####
+
+def updateProblem(status, entryID):
+  mycursor = mydb.cursor()
+  sql = "UPDATE DetectedAnalyzerProblems SET status =" +status+  "WHERE id = " + str(entryID)
+
+  mycursor.execute(sql)
+
+  mydb.commit()
+
 
 
