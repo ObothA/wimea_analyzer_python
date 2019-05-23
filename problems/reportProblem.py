@@ -2,6 +2,8 @@
 # Generic function to report problems
 ########
 
+import datetime
+
 from database.retrieveQuery import retrieveStatus
 from database.retrieveQuery import insertProblem
 from database.retrieveQuery import updateProblem
@@ -14,6 +16,16 @@ def reportProblemMethod(stationID, problem):
   else :
     status = result[0][0]
     entry_id = result[0][1]
-    print(status)
+    time_reported = result[0][1]
+    # get time since epoch
+    time_reported = datetime.datetime.strptime(time_reported, '%Y-%m-%d %H:%M:%S').timestamp()
+
     if status == 'reported':
       updateProblem('re-reported', entry_id)
+
+    if status == 're-reported':
+      current_time = datetime.datetime.now().timestamp()
+      gap = (current_time - time_reported)/ 3600
+      print(gap)
+      
+      
