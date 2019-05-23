@@ -80,3 +80,15 @@ def insertIntoChangeTracker(stationID, time_of_last_running_analyzer, Node, chan
   mydb.commit()
 
 
+#################
+# insert into ReportIntervalClusters
+##################
+def ReportIntervalClusters(stationID, Node, cluster):
+  cursor = mydb.cursor()
+  sql = "INSERT INTO ReportIntervalClusters (stationID, Node, time_of_last_running_analyzer, cluster) VALUES (%s, %s, %s, %s)"
+  time = datetime.datetime.now()
+  val = (str(stationID), Node,  time, cluster)
+  cursor.execute(sql, val)
+
+  mydb.commit()
+

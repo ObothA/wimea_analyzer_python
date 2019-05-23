@@ -3,6 +3,7 @@ import copy
 
 from problems.reportProblem import reportProblemMethod
 from database.retrieveQuery import insertIntoChangeTracker
+from database.retrieveQuery import ReportIntervalClusters
 
 
 def analyseSeconds(gap,list_of_times, sID, table):
@@ -71,4 +72,6 @@ def analyseSeconds(gap,list_of_times, sID, table):
   #print(sID[0],table,node_status)
   #entering db
   #print(sID[0], datetime.datetime.now(), str(clusters))
+  ReportIntervalClusters(sID, table, str(clusters))
+
 
