@@ -2,5 +2,5 @@
 # Generic function to report problems
 ########
 
-def reportProblem(stationID, problem):
+def reportProblemMethod(stationID, problem):
   print(stationID, problem)
