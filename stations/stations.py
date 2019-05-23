@@ -4,6 +4,7 @@
 import datetime
 from database.retrieveQuery import retrieveQuery
 from nodes.scanNodes import scanNodes 
+form problem import reportProblem
 
 def stations():
   #scan stations for on/off status
@@ -54,6 +55,7 @@ def stations():
       print('station ' + str(station_tuple[0]) + '  ON')
     elif station_tuple[1] > 4:
       # report problem
+      reportProblem(station_tuple[0], 'station off')
       print('station ' + str(station_tuple[0]) + '  OFF')
 
   print('--=====####################################======----')
