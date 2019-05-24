@@ -30,5 +30,15 @@ def reportProblemMethod(stationID, problem):
         updateProblem('persistent', entry_id)
 
 
+#######
+# CHECK IF PROBLEM EXISTED, CHANGE STATUS TO FIXED
+#######
+def  check_if_problem_existed(stationID, problem):
+  result = retrieveStatus(stationID, problem)
+
+  if len(result) is not 0:
+    entry_id = result[0][1]
+    updateProblem('fixed', entry_id)
+
       
       

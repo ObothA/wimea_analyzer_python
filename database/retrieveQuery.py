@@ -34,7 +34,7 @@ def retrieveRTCforTrend(stationID, table, biggestId):
 
 def retrieveStatus(id,problem):
   cursor = mydb.cursor()
-  sqlStatement = " select status, id, when_reported from DetectedAnalyzerProblems where stationID = " +str(id)+ " and Problem = '" + problem + "' and status != 'fixed'"
+  sqlStatement = " select status, id, when_reported from DetectedAnalyzerProblems where stationID = " +str(id)+ " and Problem = '" + problem + "' and status != 'fixed' ORDER BY id  DESC"
   cursor.execute(sqlStatement)
   result = cursor.fetchall()
   return result

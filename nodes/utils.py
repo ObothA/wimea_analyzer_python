@@ -4,7 +4,8 @@ import copy
 from problems.reportProblem import reportProblemMethod
 from database.retrieveQuery import insertIntoChangeTracker
 from database.retrieveQuery import ReportIntervalClusters
-
+from problems.reportProblem import check_if_problem_existed
+ 
 
 def analyseSeconds(gap,list_of_times, sID, table):
   #for @ station, @ node ------
@@ -65,6 +66,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
       reportProblemMethod(sID[0], table + '_' + node_status)
     elif gap < magnitude:
       node_status = 'on'
+      check_if_problem_existed(sID[0], table + '_' + node_status)
   else :
     node_status = 'not calculated, latest rtc is corrupt'
   

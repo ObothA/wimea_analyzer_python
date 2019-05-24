@@ -5,6 +5,7 @@ import datetime
 from database.retrieveQuery import retrieveQuery
 from nodes.scanNodes import scanNodes 
 from problems.reportProblem import reportProblemMethod
+from problems.reportProblem import check_if_problem_existed
 
 def stations():
   #scan stations for on/off status
@@ -52,6 +53,7 @@ def stations():
     if station_tuple[1] < 4:
       # append a tuple because the function below expects a tuple
       list_of_stationIDs_that_are_on.append((station_tuple[0],))
+       check_if_problem_existed(sID[0], 'station_off')
       # print('station ' + str(station_tuple[0]) + '  ON')
     elif station_tuple[1] > 4:
       # report problem
