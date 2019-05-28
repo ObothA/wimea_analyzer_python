@@ -53,7 +53,7 @@ def stations():
     if station_tuple[1] < 4:
       # append a tuple because the function below expects a tuple
       list_of_stationIDs_that_are_on.append((station_tuple[0],))
-       check_if_problem_existed(sID[0], 'station_off')
+      check_if_problem_existed(sID[0], 'station_off')
       # print('station ' + str(station_tuple[0]) + '  ON')
     elif station_tuple[1] > 4:
       # report problem
