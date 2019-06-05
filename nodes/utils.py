@@ -75,8 +75,8 @@ def analyseSeconds(gap,list_of_times, sID, table):
   #entering db
   #print(sID[0], datetime.datetime.now(), str(clusters))
   ReportIntervalClusters(sID[0], table, str(clusters))
-  print()
-  print()
-  print(sID[0], table, str(clusters))
+  #print()
+  #print()
+  #print(sID[0], table, str(clusters))
 
 
