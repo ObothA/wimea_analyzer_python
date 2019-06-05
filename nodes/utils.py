@@ -26,7 +26,7 @@ def analyseSeconds(gap,list_of_times, sID, table):
     difference = round(difference)
     
     #change tracker
-    if previous_difference is not 0 and difference > 1:
+    if previous_difference is not 0 and difference >= 1:
       if difference > previous_difference:
         time_of_running_analyzer = datetime.datetime.now()
         change = ' from ' + str(previous_difference) + ' to '+ str(difference)
@@ -36,10 +36,10 @@ def analyseSeconds(gap,list_of_times, sID, table):
         previous_difference = difference
       elif previous_difference < difference:
         previous_difference = difference
-    elif previous_difference is 0 and difference > 1:
+    elif previous_difference is 0 and difference >= 1:
       previous_difference = difference
 
-    if difference > 1:
+    if difference >= 1:
       append = True
       for cluster in clusters:
         if difference == cluster[0]:
@@ -75,5 +75,6 @@ def analyseSeconds(gap,list_of_times, sID, table):
   #entering db
   #print(sID[0], datetime.datetime.now(), str(clusters))
   ReportIntervalClusters(sID[0], table, str(clusters))
+  print(sID[0], table, str(clusters))
 
 
